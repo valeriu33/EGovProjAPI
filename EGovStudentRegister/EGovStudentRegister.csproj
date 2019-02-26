@@ -15,4 +15,10 @@
     <ProjectReference Include="..\EGovStudentRegister.Persistance\EGovStudentRegister.Persistance.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="hosting.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
