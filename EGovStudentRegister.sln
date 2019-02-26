@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EGovStudentRegister", "EGovStudentRegister\EGovStudentRegister.csproj", "{5F70D033-8FA3-4EB1-8CBE-64461B96F14F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EGovStudentRegister.Persistance", "EGovStudentRegister.Persistance\EGovStudentRegister.Persistance.csproj", "{68A32F24-F447-408B-B3F8-8F03CEC5F38E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F70D033-8FA3-4EB1-8CBE-64461B96F14F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F70D033-8FA3-4EB1-8CBE-64461B96F14F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F70D033-8FA3-4EB1-8CBE-64461B96F14F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F70D033-8FA3-4EB1-8CBE-64461B96F14F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68A32F24-F447-408B-B3F8-8F03CEC5F38E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68A32F24-F447-408B-B3F8-8F03CEC5F38E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68A32F24-F447-408B-B3F8-8F03CEC5F38E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68A32F24-F447-408B-B3F8-8F03CEC5F38E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A693BBCF-F655-446C-BBC0-1F994610CBCA}
+	EndGlobalSection
+EndGlobal
