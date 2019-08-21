@@ -59,7 +59,7 @@ namespace EGovStudentRegister.Controllers
             }
 
             if (response == DbResponse.Created)
-                return CreatedAtAction(actionName: nameof(UpdateOrCreate), new {id = student.ID}, student);
+                return CreatedAtAction(nameof(UpdateOrCreate), new {id = student.ID}, student);
             return Ok(student);
         }
 
