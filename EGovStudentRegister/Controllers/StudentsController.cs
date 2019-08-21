@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using EGovStudentRegister.Persistance.Constants;
 using EGovStudentRegister.Persistance.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,7 +14,7 @@ namespace EGovStudentRegister.Controllers
     {
         // GET api/students
         [HttpGet]
-        public ActionResult<IEnumerable<string>> GetAll()
+        public ActionResult<IEnumerable<Student>> GetAll()
         {
             return Ok(new StudentRepository().ReadAll());
         }
@@ -29,25 +28,39 @@ namespace EGovStudentRegister.Controllers
 
         // GET api/students/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Student> Get(int id)
         {
             return Ok(new StudentRepository().ReadSingle(id));
         }
 
-        // PUT api/students
-        [HttpPut]
-        public ActionResult Create([FromBody] Student student)
-        {
-            new StudentRepository().Create(student);
-            return Ok();
-        }
-
         // POST api/students
         [HttpPost]
-        public ActionResult Update([FromBody] Student student)
+        public ActionResult<Student> Create([FromBody] Student student)
         {
-            new StudentRepository().Update(student);
-            return Ok();
+            new StudentRepository().Create(student);
+            return Ok(student);
+        }
+
+        // PUT api/students/1
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<Student> UpdateOrCreate([FromBody] Student student)
+        {
+            var response = DbResponse.Updated;
+            try
+            {
+                response = new StudentRepository().Update(student);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
+
+            if (response == DbResponse.Created)
+                return CreatedAtAction(actionName: nameof(UpdateOrCreate), new {id = student.ID}, student);
+            return Ok(student);
         }
 
         // DELETE api/students/5
